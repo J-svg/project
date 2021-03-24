@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+            crossorigin="anonymous"></script>
+    <title>Comparision</title>
+    <style>
+        body{
+            background: linear-gradient(-45deg, #23A6D5, #23D5AB);
+        }
+        h1{
+            font-size: 40px;
+            color: #FFFFFF;
+            padding: 10px;
+        }
+        .form-label{
+            font-size: 18px;
+        }
+        .card-img-top{
+            width: 100%;
+            height: auto;
+        }
+
+        button{
+            margin-top: 10px;
+            margin-left: 33.3%;
+        }
+        .container-fluid{
+            margin-bottom: 25px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container-fluid">
+        <h1>Comparision using different values of K:</h1>
+        <div class="row row-cols-md-3 g-4">
+            <div class="col m-15">
+                <div class="card text-white bg-dark">
+                    <a href="static/segment/images/segment2.png" ><img src="static/segment/images/segment2.png" class="card-img-top" height="400px" alt="..."></a>
+                    <div class="card-body">
+                        <h5 class="card-title">When K is equal to 2</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card text-white bg-dark">
+                    <a href="static/segment/images/segment5.png" ><img src="static/segment/images/segment5.png" class="card-img-top" height="400px" alt="..."></a>
+                    <div class="card-body">
+                        <h5 class="card-title">When K is equal to 5</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card text-white bg-dark">
+                    <a href="static/segment/images/segment8.png"><img src="static/segment/images/segment8.png" class="card-img-top"></a>
+                    <div class="card-body">
+                        <h5 class="card-title">When K is equal to 8</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card text-white bg-dark">
+                    <a href="static/segment/images/segment16.png" ><img src="static/segment/images/segment16.png" class="card-img-top" height="400px" alt="..."></a>
+                    <div class="card-body">
+                        <h5 class="card-title">When K is equal to 16</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card text-white bg-dark">
+                    <a href="static/segment/images/segment32.png" ><img src="static/segment/images/segment32.png" class="card-img-top" height="400px" alt="..."></a>
+                    <div class="card-body">
+                        <h5 class="card-title">When K is equal to 32</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card text-white bg-dark">
+                    {% for img in original %}
+                    <a href="{{ img.photo.url }}" ><img src="{{ img.photo.url }}" class="card-img-top" height="400px" alt="..."></a>
+                    {% endfor %}
+                    <div class="card-body">
+                        <h5 class="card-title">Original Photo</h5>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-primary" type="submit" onclick="history.back()">Try another image!</button>
+        </div>
+    </div>
+</body>
+</html>
