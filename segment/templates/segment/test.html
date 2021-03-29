@@ -36,6 +36,23 @@
             padding-left: 20px;
             padding-right: 20px;
         }
+        .color-palette{
+            width: auto;
+            height: 15px;
+
+        }
+        span{
+            width: 150px;
+            display: block;
+            opacity: 0;
+        }
+        span:hover{
+            opacity: 1;
+            cursor: pointer;
+        }
+        .original{
+            font-size: 17px;
+        }
 
     </style>
 </head>
@@ -49,6 +66,17 @@
                     <a href="static/segment/images/segment2.png" ><img src="static/segment/images/segment2.png" class="card-img-top" height="400px" alt="..."></a>
                     <div class="card-body">
                         <h5 class="card-title">When K is equal to 2</h5>
+                        <p class="card-text">
+                            <div class="row">
+                            {% for k in k2 %}
+                                <div class="col-sm-4">
+                                    <a><div class="card m-2">
+                                        <div class="color-palette" style="background-color:rgb{{k}};"><span><b>rgb{{k}}</b></span></div>
+                                    </div></a>
+                                </div>
+                            {% endfor %}
+                            </div>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -57,6 +85,17 @@
                     <a href="static/segment/images/segment5.png" ><img src="static/segment/images/segment5.png" class="card-img-top" height="400px" alt="..."></a>
                     <div class="card-body">
                         <h5 class="card-title">When K is equal to 5</h5>
+                        <p class="card-text">
+                            <div class="row">
+                            {% for k in k5 %}
+                                <div class="col-sm-4">
+                                    <div class="card m-2">
+                                        <div class="color-palette" style="background-color:rgb{{k}};"><span><b>rgb{{k}}</b></span></div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                            </div>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -65,6 +104,17 @@
                     <a href="static/segment/images/segment8.png"><img src="static/segment/images/segment8.png" class="card-img-top"></a>
                     <div class="card-body">
                         <h5 class="card-title">When K is equal to 8</h5>
+                        <p class="card-text">
+                            <div class="row">
+                            {% for k in k8 %}
+                                <div class="col-sm-4">
+                                    <div class="card m-2">
+                                        <div class="color-palette" style="background-color:rgb{{k}};"><span><b>rgb{{k}}</b></span></div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                            </div>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -73,6 +123,17 @@
                     <a href="static/segment/images/segment16.png" ><img src="static/segment/images/segment16.png" class="card-img-top" height="400px" alt="..."></a>
                     <div class="card-body">
                         <h5 class="card-title">When K is equal to 16</h5>
+                        <p class="card-text">
+                            <div class="row">
+                            {% for k in k16 %}
+                                <div class="col-sm-4">
+                                    <div class="card m-2">
+                                        <div class="color-palette" style="background-color:rgb{{k}};"><span><b>rgb{{k}}</b></span></div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                            </div>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -81,6 +142,17 @@
                     <a href="static/segment/images/segment32.png" ><img src="static/segment/images/segment32.png" class="card-img-top" height="400px" alt="..."></a>
                     <div class="card-body">
                         <h5 class="card-title">When K is equal to 32</h5>
+                        <p class="card-text">
+                            <div class="row">
+                            {% for k in k32 %}
+                                <div class="col-sm-4">
+                                    <div class="card m-2">
+                                        <div class="color-palette" style="background-color:rgb{{k}};"><span><b>rgb{{k}}</b></span></div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                            </div>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -91,6 +163,9 @@
                     {% endfor %}
                     <div class="card-body">
                         <h5 class="card-title">Original Photo</h5>
+                        <p class="card-text">
+                            <div class="original">As the value of k increases, the image gets more detailed and at K equal to 255, we get the original image.</div>
+                        </p>
                     </div>
                 </div>
             </div>

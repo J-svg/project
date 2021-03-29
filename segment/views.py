@@ -36,11 +36,14 @@ def homepage(request):
                     p = executor.submit(image_processing, *argument)
                     results.append(p)
 
-                for f in concurrent.futures.as_completed(results):
-                    f.result()
+                ko = [0, 1, 2, 3, 4]
+                for count, f in enumerate(concurrent.futures.as_completed(results)):
+                    ko[count] = f.result()
+
+            print(ko)
             original = Image.objects.all()
 
-            return render(request, 'segment/test.html', {'form': form, 'original': original})
+            return render(request, 'segment/test.html', {'form': form, 'original': original, 'k2': ko[0], 'k5': ko[1], 'k8': ko[2], 'k16': ko[3], 'k32': ko[4]})
     form = ImageForm()
     return render(request, 'segment/home.html', {'form': form})
 
@@ -66,11 +69,14 @@ def image_processing(file_path, k):
 
     center = np.uint8(center)
 
+    centroid = [tuple(c)[::-1] for c in center]
+
     res = center[label.flatten()]
     res2 = res.reshape((img.shape))
     path = IMAGE_PATH+'segment'+str(k)+'.png'
     # path = IMAGE_PATH + 'segment.png'
     cv2.imwrite(path, res2)
+    return centroid
 
 def delete_static():
     folder = "media/upload"
